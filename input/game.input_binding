@@ -1,0 +1,12 @@
+key_trigger {
+  input: KEY_ENTER
+  action: "correct"
+}
+key_trigger {
+  input: KEY_UP
+  action: "higher"
+}
+key_trigger {
+  input: KEY_DOWN
+  action: "lower"
+}

@@ -1,0 +1,21 @@
+function init(self)
+	maxnum = 1000
+	minnum = 1
+	msg.post(".", "acquire_input_focus")
+	print("Welcome to Number Wizard Boi")
+	print("Pick a number")
+	print("The highest number is: " .. maxnum)
+	print("The lowest number is: " .. minnum)
+	print("Tell me if your number is higher or lower than 500")
+	print("Press up = higher, Press down = lower, Push Enter = Correct")
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("correct") then
+		print("The value is correct")
+	elseif action_id == hash("higher") then
+		self.print("The value is higher")
+	elseif action_id == hash("lower") then
+		self.print("The value is lower")
+	end
+end
