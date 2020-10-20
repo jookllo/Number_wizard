@@ -1,4 +1,8 @@
 function init(self)
+	StartGame()
+end
+
+function StartGame()
 	maxnum = 1000
 	minnum = 1
 	guess = 500
@@ -15,15 +19,19 @@ end
 function on_input(self, action_id, action)
 	if action_id == hash("correct") and action.pressed then
 		print("The value is correct")
+		StartGame()
 	
 		elseif action_id == hash("higher") and action.pressed then
 		minnum = guess
-		guess = (minnum + maxnum)/2
-		print("Is it higher or lower than " .. guess)
+		NextGuess()
 	
 	elseif action_id == hash("lower") and action.pressed then
 		maxnum = guess
-		guess = (minnum+maxnum)/2
-		print("Is it higher or lower than " .. guess)
+		NextGuess()
 	end
+end
+
+function NextGuess()
+	guess = (minnum+maxnum)/2
+	print("Is it higher or lower than " .. guess)
 end
